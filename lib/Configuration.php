@@ -24,10 +24,10 @@
 
  
 
-namespace PrivateBin;
+namespace PrivateBin
 
-use Exception
-use PDO
+use Exception;
+use PDO;
 
 /**
  * Configuration
