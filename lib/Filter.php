@@ -25,6 +25,8 @@ class Filter
      * format a given time string into a human readable label (localized)
      *
      * accepts times in the format "[integer][time unit]"
+     * 
+     * modfication exo 1 seance 4
      *
      * @access public
      * @static
@@ -52,6 +54,8 @@ class Filter
 
     /**
      * format a given number of bytes in IEC 80000-13:2008 notation (localized)
+     * 
+     * modfication exo 1 seance 4
      *
      * @access public
      * @static
@@ -67,5 +71,16 @@ class Filter
             ++$i;
         }
         return number_format($size, ($i ? 2 : 0), '.', ' ') . ' ' . I18n::_($iec[$i]);
+    }
+
+
+    //Réecrivez la méthode formatHumanReadableTime du fichier lib/Filter.php à l'aide de Copilot. Cette fois-ci, la méthode prendra 2 arguments : une valeur entière et une unité en chaîne de caractères.
+    public static function formatHumanReadableTime2(int $value, string $unit): string
+    {
+        $unit = rtrim($unit, 's');
+        if ($value > 1) {
+            $unit .= 's';
+        }
+        return $value . ' ' . $unit;
     }
 }
